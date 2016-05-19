@@ -52,7 +52,6 @@ Task("UnitTests")
  * \warn: Execute AFTER Build and UnitTests have been run
  */
 Task("CopyArtifacts")
-    .IsDependentOn("UnitTests")
     .Does(() => {
        var artifacts = new Dictionary<string, string>() {
            { @".\" + project.WebAppName + @"\bin\*.dll", buildDir + @"\" + project.WebAppName + @"\bin" },
